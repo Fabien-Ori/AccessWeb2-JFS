@@ -90,6 +90,12 @@ button:focus {
     right: 0;
     opacity: 0.3;
     z-index: 1;
+    pointer-events: none;
+}
+
+.bloc-bg-texture .container {
+    position: relative;
+    z-index: 2;
 }
 
 .b-parallax {
