@@ -88,6 +88,22 @@ button:focus {
     pointer-events: none;
 }
 
+.texture-paper::before {
+    background: url("../img/texture-paper.webp");
+    background-size: 280px 280px;
+    background-repeat: repeat;
+}
+
+.bg-dots-bg.bloc-bg-texture::before {
+    background: url("../img/dots-bg.webp");
+    background-repeat: repeat;
+}
+
+.bg-lines-h2-bg.bloc-bg-texture::before {
+    background: url("../img/lines-h2-bg.webp");
+    background-repeat: repeat;
+}
+
 .bloc-bg-texture .container {
     position: relative;
     z-index: 2;
@@ -668,6 +684,11 @@ h4 {
 
 .bg-dots-bg {
     background-image: url("../img/dots-bg.webp");
+    background-size: auto !important;
+}
+
+.bg-lines-h2-bg {
+    background-image: url("../img/lines-h2-bg.webp");
     background-size: auto !important;
 }
 
