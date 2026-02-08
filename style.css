@@ -218,7 +218,23 @@ button:focus {
 .voffset-lg {
     margin-top: 80px;
 }
+/* ////////////////// */
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
+.portfolio-item {
+    flex: 1 1 calc(50% - 30px);
+}
+
+@media (max-width: 767px) {
+    .portfolio-item {
+        flex-basis: 100%;
+    }
+}
+/* ////////////////// */
 .row-no-gutters {
     margin-right: 0;
     margin-left: 0;
