@@ -384,6 +384,27 @@ nav .caret {
 .service-text {
     font-size: 12px;
 }
+/* //////////// */
+.service-text-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.text-center.service-text-lines {
+    align-items: center;
+}
+
+.text-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.text-center.text-lines {
+    align-items: center;
+}
+/* //////////// */
 
 .mg-md {
     margin-top: 10px;
