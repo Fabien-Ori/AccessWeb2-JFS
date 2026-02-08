@@ -29,6 +29,7 @@ a:hover {
 }
 
 a:focus,
+.close-lightbox:focus-visible,
 button:focus {
     outline: 2px solid #FF6B6B;
     outline-offset: 2px;
@@ -89,12 +90,6 @@ button:focus {
     right: 0;
     opacity: 0.3;
     z-index: 1;
-}
-
-.texture-paper::before {
-    background: url("img/texture-paper.png");
-    background-size: 280px 280px;
-    background-repeat: repeat;
 }
 
 .b-parallax {
@@ -522,36 +517,38 @@ a[data-lightbox]:hover img {
 }
 
 .close-lightbox {
-    color: var(--white);
+    color: #FFFFFF;
     font-size: 30px;
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 20;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.85);
     border: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
     line-height: 30px;
     padding: 0 9px 5px;
-    opacity: 0.3;
+    opacity: 0.9;
 }
 
 .close-lightbox:hover,
 .next-lightbox:hover,
 .prev-lightbox:hover {
     opacity: 1.0;
-    color: var(--white);
+    color: #FFFFFF;
 }
 
 .next-lightbox,
 .prev-lightbox {
     font-size: 20px;
-    color: rgba(255, 255, 255, .9);
-    background: rgba(0, 0, 0, .5);
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.85);
     transition: var(--transition-fast);
     position: absolute;
     top: 45%;
     z-index: 1;
-    opacity: 0.4;
+    opacity: 0.9;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
 }
 
 .next-lightbox {
@@ -716,11 +713,6 @@ h4 {
 
 .bg-dots-bg {
     background-image: url("img/dots-bg.webp");
-    background-size: auto !important;
-}
-
-.bg-lines-h2-bg {
-    background-image: url("img/lines-h2-bg.webp");
     background-size: auto !important;
 }
 
