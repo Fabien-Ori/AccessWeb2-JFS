@@ -16,6 +16,8 @@ body {
     padding: 0;
     background: #FFF;
     overflow-x: hidden;
+    font-size: 16px;
+    /* Optimized font size */
 }
 
 a,
@@ -35,14 +37,7 @@ button:focus {
     outline-offset: 2px;
 }
 
-#page-loading-blocs-notification {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 100000;
-    background: #FFFFFF url("img/pageload-spinner.gif") no-repeat center center;
-}
+
 
 .bloc {
     width: 100%;
@@ -242,7 +237,7 @@ button:focus {
 }
 
 #bloc-1-hero h1 {
-    font-size: 32px;
+    font-size: 2.5rem;
 }
 
 .navbar {
@@ -591,11 +586,11 @@ a {
 }
 
 .hero-bloc-text {
-    font-size: 38px;
+    font-size: 2.5rem;
 }
 
 p {
-    font-size: 11px;
+    font-size: 1rem;
 }
 
 .tight-width-whitespace {
@@ -630,12 +625,12 @@ p {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 2rem;
     line-height: 1.4em;
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--dark-text) !important;
@@ -900,4 +895,20 @@ h4 {
     .bloc-mob-center-text {
         text-align: center;
     }
+}
+
+.citation-text {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.citation-text p {
+    margin-bottom: 15px;
+}
+
+.citation-text footer {
+    font-weight: 700;
+    margin-top: 10px;
+    display: block;
 }
