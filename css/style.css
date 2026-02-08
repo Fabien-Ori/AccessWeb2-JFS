@@ -381,6 +381,10 @@ nav .caret {
     float: right;
 }
 
+.service-text {
+    font-size: 12px;
+}
+
 .mg-md {
     margin-top: 10px;
     margin-bottom: 20px;
