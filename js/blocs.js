@@ -116,12 +116,19 @@ function setUpVisibilityToggle() {
     $(document).on("click", "[data-toggle-visibility]", function(t) {
         t.preventDefault();
         var e = $(this).attr("data-toggle-visibility");
-        if (-1 != e.indexOf(",")) {
+        if (typeof e === "string" && e && e.indexOf(",") !== -1) {
             var i = e.split(",");
             $.each(i, function(t) {
                 a($("#" + i[t]))
             })
-        } else a($("#" + e));
+        } else if (typeof e === "string" && e) {
+            a($("#" + e));
+        } else {
+            // Fallback: log warning if e is not a string
+            if (e !== undefined) {
+                console.warn("data-toggle-visibility attribute is not a string:", e);
+            }
+        }
 
         function a(t) {
             t.is("img") ? t.toggle() : t.slideToggle()
@@ -194,7 +201,7 @@ $(document).ready(function() {
             scrollTop: $("#scroll-hero").closest(".bloc").height()
         }, "slow")
     }), extraNavFuncs(), setUpSpecialNavs(), setUpDropdownSubs(), setUpLightBox(), setUpVisibilityToggle(), addSwipeSupport(), addKeyBoardSupport(), -1 != navigator.userAgent.indexOf("Safari") && -1 == navigator.userAgent.indexOf("Chrome") && $("#page-loading-blocs-notifaction").remove()
-}), $(window).load(function() {
+}), $(window).on("load", function() {
     setFillScreenBlocHeight(), animateWhenVisible(), $("#page-loading-blocs-notifaction").remove()
 }).resize(function() {
     setFillScreenBlocHeight()
