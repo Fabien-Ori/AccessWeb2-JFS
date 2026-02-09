@@ -1,82 +1,62 @@
-$(function()
-{	
-	$("input,textarea").jqBootstrapValidation(
-    {
-     	preventSubmit: true,
-     	submitSuccess: function($form, event)
-	 	{			
-			if(!$form.attr('action')) // Check form doesnt have action attribute
-			{
-				event.preventDefault(); // prevent default submit behaviour
-			
-				var processorFile = getProcessorPath($form);
-				var formData = {};
+document.addEventListener('DOMContentLoaded', function() {
+	var form = document.querySelector('form');
+	if (!form) return;
 
-				$form.find("input, textarea, option:selected").each(function(e) // Loop over form objects build data object
-				{		
-					var fieldData =  $(this).val();
-					var fieldID =  $(this).attr('id');
-				
-					if($(this).is(':checkbox')) // Handle Checkboxes
-					{
-						fieldData = $(this).is(":checked");
-					}
-					else if($(this).is(':radio')) // Handle Radios
-					{
-						fieldData = $(this).val()+' = '+$(this).is(":checked");
-					}
-					else if($(this).is('option:selected')) // Handle Option Selects
-					{
-						fieldID = $(this).parent().attr('id');
-					}
-					
-					formData[fieldID] = fieldData;		
-				});
-	
-				$.ajax({
-		        	url: processorFile,
-		    		type: "POST",
-		    		data: formData,
-		    		cache: false,
-		    		success: function() // Success
-		 			{  
-						if($form.is('[success-msg]')) // Show Success Message
-						{
-							$form.append("<div id='form-alert'><div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>"+$form.attr('success-msg')+"</strong></div></div>");
-						}
-						else // Re-Direct
-						{
-							window.location.replace($form.attr('success-url'));
-						}	
-						
-						$form.trigger("reset"); // Clear Form	
-		 	   		},
-			   		error: function() // Fail
-			   		{
-						if($('#form-alert').length == 0)
-						{
-							$form.append("<div id='form-alert'><div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>"+$form.attr('fail-msg')+"</strong></div></div>");
-						}	
-			   		},
-		   		});
+	form.addEventListener('submit', function(event) {
+		var invalid = false;
+		
+		var errorBlocks = form.querySelectorAll('.help-block');
+		errorBlocks.forEach(function(block) { block.remove(); });
+		var inputs = form.querySelectorAll('input, textarea');
+		inputs.forEach(function(input) {
+			if (!input.checkValidity()) {
+				invalid = true;
+				input.classList.add('has-error');
+				var msg = input.validationMessage || 'Ce champ est obligatoire.';
+				var error = document.createElement('span');
+				error.className = 'help-block';
+				error.textContent = msg;
+				input.parentNode.appendChild(error);
+			} else {
+				input.classList.remove('has-error');
 			}
-         },
-         filter: function() // Handle hidden form elements
-		 {
-			 return $(this).is(":visible");
-         },
-	 });
-	 
-	 // Get Path to processor PHP file
-	 function getProcessorPath(form)
-	 {
-		var path = "./includes/"+form.attr('id')+".php";
-		
-		if(form.attr('template-path')) // Check For Template path
-		{
-			path = form.attr('template-path')+"/includes/"+form.attr('id')+".php";
+		});
+		if (invalid) {
+			event.preventDefault();
+			event.stopPropagation();
+			return;
 		}
-		
-	 	return path
-	 }
+
+		event.preventDefault();
+		var formData = new FormData(form);
+		var processorFile = './includes/' + (form.id || 'form_1') + '.php';
+
+		fetch(processorFile, {
+			method: 'POST',
+			body: formData
+		})
+		.then(function(response) {
+			if (response.ok) {
+				var msg = form.getAttribute('success-msg') || 'Votre message a été envoyé avec succès.';
+				showAlert(msg, 'success');
+				form.reset();
+			} else {
+				throw new Error('Server error');
+			}
+		})
+		.catch(function() {
+			var msg = form.getAttribute('fail-msg') || 'Désolé, notre serveur de mail ne répond pas. Veuillez réessayer ultérieurement.';
+			showAlert(msg, 'danger');
+		});
+	});
+
+	function showAlert(message, type) {
+		var alert = document.createElement('div');
+		alert.className = 'alert alert-' + type;
+		alert.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>' + message + '</strong>';
+		var oldAlert = document.getElementById('form-alert');
+		if (oldAlert) oldAlert.remove();
+		alert.id = 'form-alert';
+		form.appendChild(alert);
+	}
 });
