@@ -29,6 +29,7 @@ Ce projet est un site web statique conçu pour présenter une page d'accueil et 
 OU
 
 1. https://fabien-ori.github.io/AccessWeb2-JFS/accueil.html
+
 ## Technologies utilisées
 
 - HTML5
