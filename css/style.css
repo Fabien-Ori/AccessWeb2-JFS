@@ -370,6 +370,14 @@ nav .caret {
 }
 /* //////////// */
 
+.text-contrast-panel {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 20px 24px;
+    border-radius: 6px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 .mg-md {
     margin-top: 10px;
     margin-bottom: 20px;
