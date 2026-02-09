@@ -222,6 +222,11 @@ button:focus {
     flex: 1 1 calc(50% - 30px);
 }
 
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 767px) {
     .portfolio-item {
         flex-basis: 100%;
