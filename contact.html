@@ -2,12 +2,46 @@
 <html lang="fr">
 
 <head>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Agence La Panthère",
+		"image": "https://fabien-ori.github.io/AccessWeb2-JFS/img/agence-la-panthere-monochrome.svg",
+		"description": "L'agence La Panthère est une agence de design web qui aide les entreprises à devenir attractives et visibles sur internet.",
+		"url": "https://fabien-ori.github.io/AccessWeb2-JFS/contact.html",
+		"telephone": "+33478000000",
+		"email": "contact@agencelapanthere.com",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "2 place Sathonay",
+			"addressLocality": "Lyon",
+			"postalCode": "69001",
+			"addressCountry": "FR"
+		},
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday"
+			],
+			"opens": "09:00",
+			"closes": "18:00"
+		}
+	}
+</script>
 	<meta charset="utf-8">
 	<meta name="keywords" content="contact agence web, devis site web lyon, agence web design">
-	<meta name="description" content="Contactez l'Agence La Panthère pour un devis gratuit. Web design, création de sites internet à Lyon.">
+	<meta name="description"
+		content="Contactez l'Agence La Panthère pour un devis gratuit. Web design, création de sites internet à Lyon.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta property="og:title" content="Contactez l'Agence La Panthère - Web Design Lyon">
-	<meta property="og:description" content="Contactez l'Agence La Panthère pour un devis gratuit. Web design, création de sites internet à Lyon.">
+	<meta property="og:description"
+		content="Contactez l'Agence La Panthère pour un devis gratuit. Web design, création de sites internet à Lyon.">
 	<meta property="og:type" content="website">
 	<link rel="canonical" href="https://agencelapanthere.com/contact.html">
 	<link rel="shortcut icon" type="image/webp" href="img/favicon.webp">
@@ -21,8 +55,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
 	<script src="./js/blocs.js" defer></script>
-	<script src="./js/jquery.touchSwipe.js" defer></script>
-	<script src="./js/jqBootstrapValidation.js" defer></script>
 	<script src="./js/formHandler.js" defer></script>
 	<title>Contactez l'Agence La Panthère - Devis Web Design Gratuit</title>
 
@@ -39,21 +71,21 @@
 	<div class="page-container">
 
 		<!-- bloc-0 -->
-		<header class="bloc bgc-white l-bloc">
+		<header class="bloc bgc-white l-bloc bloc-bg-texture texture-paper">
 			<div class="container bloc-sm">
 
 				<nav class="navbar row">
 					<div class="navbar-header">
 
-						<a class="navbar-brand" href="accueil.html"><img src="img/agence-la-panthere-monochrome.svg"
-						alt="paris web design logo agence web meilleure agence" height="40" /></a>
-						<button id="nav-toggle" type="button" class="navbar-toggle"
-							data-toggle="collapse">
+						<a class="navbar-brand"><img src="img/agence-la-panthere-monochrome.svg"
+								alt="Logo agence La Panthère" height="40" /></a>
+						<button id="nav-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-1">
 							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
 								class="icon-bar"></span><span class="icon-bar"></span>
 						</button>
 					</div>
-					<div class="collapse navbar-collapse">
+					<div class="collapse navbar-collapse navbar-1">
 						<ul class="site-navigation nav navbar-nav">
 							<li>
 								<a href="accueil.html">Accueil</a>
@@ -69,73 +101,101 @@
 		<!-- bloc-0 END -->
 
 		<main id="main-content">
-		<!-- bloc-1 -->
-	<section class="bloc bg-dots-bg bg-repeat bg-banniere bgc-atomic-tangerine d-bloc bloc-bg-texture b-parallax">
-			<div class="container bloc-lg">
-				<div class="row">
-					<div class="col-sm-12">
-						<h1 class="text-center hero-bloc-text tc-white">
-							Parlons web design !
-						</h1>
-						<p class="text-center mg-lg tc-white tight-width-whitespace service-text text-lines">
-							<span>Nous sommes ravis que vous souhaitiez collaborer avec notre agence.</span>
-							<span>Parlez-nous de votre projet en complétant le formulaire ci-dessous.</span>
-						</p>
+			<!-- bloc-1 -->
+			<section
+				class="bloc bg-lines-h2-bg bg-repeat bg-banniere bgc-atomic-tangerine d-bloc bloc-bg-texture b-parallax">
+				<div class="container bloc-lg">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="text-center hero-bloc-text tc-white">
+								Parlons web design !
+							</h1>
+							<p class="text-center mg-lg tc-white tight-width-whitespace service-text text-lines">
+								<span>Nous sommes ravis que vous souhaitiez collaborer avec notre agence.</span>
+								<span>Parlez-nous de votre projet en complétant le formulaire ci-dessous.</span>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- bloc-1 END -->
+			</section>
+			<!-- bloc-1 END -->
 
-		<!-- bloc-2 -->
-		<section class="bloc bgc-white l-bloc">
-			<div class="container bloc-lg">
-				<div class="row">
-				<div class="col-form">	
-						<form novalidate success-msg="Votre message a été envoyé avec succès."
-							fail-msg="Désolé, notre serveur de mail ne répond pas. Veuillez réessayer ultérieurement.">
-							<fieldset>
-								<legend class="sr-only">Formulaire de contact</legend>
-								<div class="form-group">
-									<label for="name">
-										Nom <span aria-label="requis"> (Obligatoire)</span>
-									</label>
-									<input id="name" class="form-control" required aria-required="true" />
+			<!-- bloc-2 -->
+			<section class="bloc bgc-white l-bloc bloc-bg-texture bg-dots-bg">
+				<div class="container bloc-lg">
+					<div class="row">
+						<div class="col-form">
+							<form id="contact-form" novalidate>
+								<fieldset>
+									<legend>Formulaire de contact</legend>
+
+									<div class="form-group">
+										<label for="name">
+											Nom <span aria-hidden="true">(Obligatoire)</span>
+										</label>
+										<input id="name" name="name" class="form-control" type="text" required
+											aria-required="true" autocomplete="name" aria-describedby="help-name">
+										<span id="help-name" class="form-help">Lettres et accents autorisés</span>
+										<span class="error-message" aria-live="polite"></span>
+									</div>
+
+									<div class="form-group">
+										<label for="email">
+											Adresse email <span aria-hidden="true">(Obligatoire)</span>
+										</label>
+										<input id="email" name="email" class="form-control" type="email" required
+											aria-required="true" autocomplete="email" placeholder="exemple@domaine.fr">
+										<span class="error-message" aria-live="polite"></span>
+									</div>
+
+									<div class="form-group">
+										<label for="source">
+											Comment nous avez-vous connu ? <span aria-hidden="true">(Obligatoire)</span>
+										</label>
+										<input id="source" name="source" class="form-control" type="text" required
+											aria-required="true">
+										<span class="error-message" aria-live="polite"></span>
+									</div>
+
+									<div class="form-group">
+										<label for="message">
+											Brief de votre projet <span aria-hidden="true">(Obligatoire)</span>
+										</label>
+										<textarea id="message" name="message" class="form-control" rows="4" required
+											aria-required="true"
+											placeholder="Ajoutez autant de détails que nécessaire"></textarea>
+										<span class="error-message" aria-live="polite"></span>
+									</div>
+
+									<button class="btn btn-atomic-tangerine btn-clean btn-rd btn-lg cta-hero"
+										type="submit">
+										Envoyer
+									</button>
+
+									<span id="button-status" class="sr-only" aria-live="polite"
+										aria-atomic="true"></span>
+								</fieldset>
+
+								<div id="modal-form-confirmation" class="custom-modal" role="dialog"
+									aria-labelledby="modal-title" aria-modal="true" hidden>
+									<div class="custom-modal-content">
+										<h2 id="modal-title">Message envoyé avec succès !</h2>
+										<p>Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
+										</p>
+										<button id="modal-close-button" class="btn btn-atomic-tangerine btn-clean btn-rd btn-lg cta-hero">Fermer</button>
+									</div>
 								</div>
-								<div class="form-group">
-									<label for="email">
-										Adresse email <span aria-label="requis"> (Obligatoire)</span>
-									</label>
-									<input id="email" class="form-control" type="email" required aria-required="true" />
-								</div>
-								<div class="form-group">
-									<label for="input_504">
-										Comment nous avez-vous connu ? <span aria-label="requis"> (Obligatoire)</span>
-									</label>
-									<input class="form-control" type="text" required aria-required="true" id="input_504" />
-								</div>
-								<div class="form-group">
-									<label for="message">
-										Brief de votre projet (Ajoutez autant de détails que nécessaire) <span aria-label="requis"> (Obligatoire)</span>
-									</label><textarea id="message" class="form-control" rows="4" cols="50"
-										required aria-required="true"></textarea>
-								</div>
-								<button class="btn btn-atomic-tangerine btn-clean btn-rd btn-lg cta-hero"
-									type="submit">
-									Envoyer
-								</button>
-							</fieldset>
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- bloc-2 END -->
+			</section>
+			<!-- bloc-2 END -->
 
-		<!-- ScrollToTop Button -->
-		<a class="btn scrollToTop" aria-label="Retourner en haut" role="button" tabindex="0"><span
-				class="fa fa-chevron-up" aria-hidden="true"></span></a>
-		<!-- ScrollToTop Button END-->
+			<!-- ScrollToTop Button -->
+			<a class="btn scrollToTop" aria-label="Retourner en haut" role="button" tabindex="0"><span
+					class="fa fa-chevron-up" aria-hidden="true"></span></a>
+			<!-- ScrollToTop Button END-->
 
 		</main>
 
@@ -153,22 +213,30 @@
 						<div class="row row-no-gutters social">
 							<div class="col-sm-3">
 								<div class="text-center">
-									<a class="social" href="https://www.twitter.com"><span class="fa fa-twitter icon-md"></span><span class="social-text">Twitter</span></a>
+									<a class="social" href="https://www.twitter.com"><span
+											class="fa fa-twitter icon-md"></span><span
+											class="social-text">Twitter</span></a>
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="text-center">
-									<a class="social" href="https://www.facebook.com"><span class="fa fa-facebook icon-md"></span><span class="social-text">Facebook</span></a>
+									<a class="social" href="https://www.facebook.com"><span
+											class="fa fa-facebook icon-md"></span><span
+											class="social-text">Facebook</span></a>
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="text-center">
-									<a class="social" href="https://www.dribbble.com"><span class="fa fa-dribbble icon-md"></span><span class="social-text">Dribble</span></a>
+									<a class="social" href="https://www.dribbble.com"><span
+											class="fa fa-dribbble icon-md"></span><span
+											class="social-text">Dribble</span></a>
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="text-center">
-									<a class="social" href="https://www.instagram.com"><span class="fa fa-instagram icon-md"></span><span class="social-text">Instagram</span></a>
+									<a class="social" href="https://www.instagram.com"><span
+											class="fa fa-instagram icon-md"></span><span
+											class="social-text">Instagram</span></a>
 								</div>
 							</div>
 						</div>
